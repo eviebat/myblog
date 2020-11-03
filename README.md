@@ -1,5 +1,6 @@
 My Blog
 =====
+`pip install -r requirements.txt`
 
 API
 ====
