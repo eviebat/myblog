@@ -1,0 +1,9 @@
+Django
+psycopg2
+django-bootstrap4
+django-ckeditor
+django-crispy
+django-taggit
+djangorestframework
+httpie
+
