@@ -12,13 +12,10 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
-
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
-
-    # author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     author = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')

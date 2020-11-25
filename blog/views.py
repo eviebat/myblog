@@ -1,12 +1,12 @@
 from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from django.db.models import Count
 
 from taggit.models import Tag
 
-from .models import Post, Comment
+from .models import Post
 from django.contrib.postgres.search import SearchVector
 from .forms import EmailPostForm, CommentForm, SearchForm
 
