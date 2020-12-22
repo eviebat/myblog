@@ -30,8 +30,8 @@ class Post(models.Model):
     tags = TaggableManager()
 
     class Meta:
-        verbose_name = 'пост'
-        verbose_name_plural = 'посты'
+        verbose_name = 'post'
+        verbose_name_plural = 'posts'
         ordering = ('-publish', )
 
     def __str__(self):
@@ -54,8 +54,8 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = 'комментарий'
-        verbose_name_plural = 'комментарии'
+        verbose_name = 'comment'
+        verbose_name_plural = 'comments'
         ordering = ('created', )
 
     def __str__(self):

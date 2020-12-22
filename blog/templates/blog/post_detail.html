@@ -9,10 +9,10 @@
   <hr>
   <p>{{ post.body|safe }}</p>
   <hr>
-  <p><a href="{% url 'blog:post_share' post.id %}">Отправить по e-mail</a></p>
+  <p><a href="{% url 'blog:post_share' post.id %}">Send by e-mail</a></p>
   <hr>
       {% with comments.count as total_comment %}
-  <p>Комментариев {{ total_comment }}</p>
+  <p>Comments {{ total_comment }}</p>
   {% endwith %}
   <hr>
   {% for comment in comments %}
@@ -22,29 +22,29 @@
            <hr>
       {{ comment.created }}
   {% empty %}
-      <p>Нет комментариев</p>
+      <p>No comments</p>
   {% endfor %}
   {% if new_comment %}
-    <p>Ваш комментарий добавлен</p>
+    <p>Your comment has been added</p>
   {% else %}
-      <h4>Добавить комментарий</h4>
+      <h4>Add a comment</h4>
       <form action="." method="post">
         {{ comment_form|crispy }}
         {% csrf_token %}
-      {% buttons submit='Отправить' %}{% endbuttons %}
+      {% buttons submit='Send' %}{% endbuttons %}
       </form>
   {% endif %}
   </div>
 
   <div style="" class="col-sm-3">
-      <h4>Рекоммендуемые</h4>
+      <h4>Recommended</h4>
       <hr>
       <ul>
       {% for post in similar_posts %}
           <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
       {% endfor %}
   </ul>
-      <h4 style="text-align: center">Новые</h4>
+      <h4 style="text-align: center">New ones</h4>
       <hr>
   <ul>
       {% for post in post_new_list %}

@@ -3,21 +3,21 @@
 {% load crispy_forms_filters %}
 
 
-{% block title %}Поделиться публикацией{% endblock %}
+{% block title %}Share a post{% endblock %}
 
 {% block content %}
 
     <div style="" class="col-sm-12">
       <div class="jumbotron">
       {% if sent %}
-          <h4>Статья "{{ post.title }}" была успешно отправлена на {{ form.cleaned_data.to }}.</h4>
+          <h4>Article "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.</h4>
           <hr>
       {% else %}
-        <h1>Поделиться по электронной почте</h1>
+        <h1>Share via email</h1>
         <form class="form-group" action="." method="post">
             {{ form|crispy }}
             {% csrf_token %}
-            {% buttons submit='Отправить' %}{% endbuttons %}
+            {% buttons submit='Send' %}{% endbuttons %}
         </form>
       {% endif %}
     </div>

@@ -11,7 +11,7 @@ from .permissions import IsAuthorOrReadOnly
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Этот набор представлений автоматически создает действия `list` и `detail`.
+    This set of views automatically creates the `list` and `detail ' actions.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -19,8 +19,8 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 
 class PostViewSet(viewsets.ModelViewSet):
     """
-    Этот набор представлений автоматически предоставляет действия "список`, `создать`, `извлечь`,
-    `обновить` и "уничтожить".
+    This set of views automatically provides the actions 'list`, 'create', ' extract`,
+    'update` and 'destroy'.
     """
     queryset = Post.published.all()
     serializer_class = PostSerializer
